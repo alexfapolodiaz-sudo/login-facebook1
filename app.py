@@ -36,6 +36,9 @@ def callback():
     user_info = resp.json()
     session['user'] = user_info
     return redirect('/')
+import os
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
